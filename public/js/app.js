@@ -152,7 +152,7 @@ App.DraggableView = Ember.View.extend({
 // ** Models
 
 App.Store = DS.Store.extend({
-  revision: 11
+  revision: 12
 });
 
 App.Item = DS.Model.extend({
