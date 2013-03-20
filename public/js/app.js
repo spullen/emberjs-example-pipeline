@@ -37,11 +37,6 @@ App.ApplicationRoute = Ember.Route.extend({
 App.ItemsRoute = Ember.Route.extend({
   model: function() {
     return App.Item.find(); 
-  },
-  events: {
-    goToRoot: function( ) {
-      this.transitionTo("index");
-    }
   }
 });
 
@@ -92,7 +87,7 @@ App.ItemsNewController = Ember.ObjectController.extend({
     var desc  = item.get( 'desc' );
     if( title && desc ) {
       item.store.commit();
-      this.get('target').send('goToRoot');
+      this.transitionToRoute('index');
     }
     else {
       alert( "Please fill out both fields." );
@@ -100,7 +95,7 @@ App.ItemsNewController = Ember.ObjectController.extend({
   },
   cancel: function( item ) {
     item.get('transaction').rollback();
-    this.get('target').send('goToRoot');
+    this.transitionToRoute('index');
   }
 });
 
