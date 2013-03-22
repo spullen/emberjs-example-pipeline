@@ -30,7 +30,6 @@ App.ApplicationRoute = Ember.Route.extend({
   setupController: function() {
     this.controllerFor('itemsAside').set('model', App.Item.find());
     this.controllerFor('stages').set('model', App.Stage.find());
-    this.controllerFor('debug').set('model', App.Stage.find());
   }
 });
 
@@ -49,10 +48,11 @@ App.ItemsNewRoute = Ember.Route.extend({
 
 // *** Controllers
 
-App.DebugController = Ember.ArrayController.extend();
+App.DebugController = Ember.ArrayController.extend({
+  needs: ['stages']
+});
 
 App.StagesController = Ember.ArrayController.extend({
-
   addItemToStage: function( itemId, stageId ) {
     var stage = App.Stage.find( stageId );
     var item  = App.Item.find( itemId );
