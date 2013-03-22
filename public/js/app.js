@@ -28,7 +28,7 @@ App.Router.map( function () {
 
 App.ApplicationRoute = Ember.Route.extend({
   setupController: function() {
-    this.controllerFor('itemsAside').set('model', App.Item.find());
+    this.controllerFor('items').set('model', App.Item.find());
     this.controllerFor('stages').set('model', App.Stage.find());
   }
 });
@@ -66,7 +66,7 @@ App.StagesController = Ember.ArrayController.extend({
   }
 });
 
-App.ItemsAsideController = Ember.ArrayController.extend({
+App.ItemsController = Ember.ArrayController.extend({
   unassigned: function() {
     return this.filter(function(item, index, enumerable){
       return !item.get('stage');

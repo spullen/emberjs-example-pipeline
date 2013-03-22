@@ -47,7 +47,7 @@
     <script type="text/x-handlebars" data-template-name="index">
       <div class="row">
         <div class ="four columns" id="items">
-           {{ render "itemsAside" }}
+           {{ render "items" }}
          </div>
         <div class ="eight columns" id="stages">
           <div class="row">
@@ -74,7 +74,7 @@
     </script>
 
 
-    <script type="text/x-handlebars" data-template-name="itemsAside">
+    <script type="text/x-handlebars" data-template-name="items">
       <div class="items-header">
         <h3>Items</h3>
         {{#linkTo "items.new" }}+ Add new Item{{/linkTo}}
