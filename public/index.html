@@ -59,27 +59,13 @@
       </div>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="items/new">
-      <p>Create a new Item</p>
-      {{ partial newItemForm }}
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="_newItemForm">
-      <form class="itemform">
-        {{view Ember.TextField valueBinding='content.title' name='title' viewName='titleField' placeholder='Enter a title'}}
-        {{view Ember.TextArea valueBinding='content.desc' name='desc' viewName='descField' placeholder='Enter a description'}}
-        <a href="#" {{ action save model }} class="small button">Add Item</button>
-      </form>      
-      <a href="#" {{ action cancel model }}>Go Back</a>
-    </script>
-
-
     <script type="text/x-handlebars" data-template-name="items">
       <div class="items-header">
         <h3>Items</h3>
         {{#linkTo "items.new" }}+ Add new Item{{/linkTo}}
       </div>
       {{ partial "itemList" }}
+      {{ outlet }}
     </script>
 
     <script type="text/x-handlebars" data-template-name="_itemList">
@@ -102,6 +88,20 @@
         {{/view}}
       {{/each}}
       </ul>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="items/new">
+      <p>Create a new Item</p>
+      {{ partial newItemForm }}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="_newItemForm">
+      <form class="itemform">
+        {{view Ember.TextField valueBinding='content.title' name='title' viewName='titleField' placeholder='Enter a title'}}
+        {{view Ember.TextArea valueBinding='content.desc' name='desc' viewName='descField' placeholder='Enter a description'}}
+        <a href="#" {{ action save model }} class="small button">Add Item</button>
+      </form>      
+      <a href="#" {{ action cancel model }}>Go Back</a>
     </script>
 
     <script type="text/x-handlebars" data-template-name="stages">
