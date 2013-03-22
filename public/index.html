@@ -83,10 +83,6 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="stages">
-      {{ partial "stageList" }}
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="_stageList">
       {{#each stage in controller }}
         {{#view App.StageColumnView contentBinding="stage"}}
           <div class="two columns stagecolumn">
