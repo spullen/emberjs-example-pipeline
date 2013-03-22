@@ -48,7 +48,7 @@ App.ItemsNewRoute = Ember.Route.extend({
 
 // *** Controllers
 
-App.DebugController = Ember.ArrayController.extend({
+App.DebugController = Ember.Controller.extend({
   needs: ['stages']
 });
 
@@ -147,7 +147,8 @@ App.DraggableView = Ember.View.extend({
 // ** Models
 
 App.Store = DS.Store.extend({
-  revision: 12
+  revision: 12,
+  adapter: 'DS.RESTAdapter'
 });
 
 App.Item = DS.Model.extend({
