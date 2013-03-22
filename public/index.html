@@ -82,6 +82,28 @@
       {{ partial "itemList" }}
     </script>
 
+    <script type="text/x-handlebars" data-template-name="_itemList">
+      <ul class="one-up mobile">
+      {{#each item in controller.unassigned}}
+        {{#view App.DraggableView contentBinding="item"}}
+          <li class="itemli">
+            <div class="itemdeletebutton">
+              <a href="#" {{ action "delete" item }}>X</a>
+            </div>
+
+            <div class="itemtitle">
+              {{ item.title }}
+            </div>
+
+            <div class="itemdesc">
+              {{ item.desc }}
+            </div>
+          </li>
+        {{/view}}
+      {{/each}}
+      </ul>
+    </script>
+
     <script type="text/x-handlebars" data-template-name="stages">
       {{#each stage in controller }}
         {{#view App.StageColumnView contentBinding="stage"}}
@@ -108,28 +130,6 @@
           </div>
         {{/view}}
       {{/each}}
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="_itemList">
-      <ul class="one-up mobile">
-      {{#each item in controller.unassigned}}
-        {{#view App.DraggableView contentBinding="item"}}
-          <li class="itemli">
-            <div class="itemdeletebutton">
-              <a href="#" {{ action "delete" item }}>X</a>
-            </div>
-
-            <div class="itemtitle">
-              {{ item.title }}
-            </div>
-
-            <div class="itemdesc">
-              {{ item.desc }}
-            </div>
-          </li>
-        {{/view}}
-      {{/each}}
-      </ul>
     </script>
 
     <script src="js/libs/jquery-1.9.0.js"></script>
