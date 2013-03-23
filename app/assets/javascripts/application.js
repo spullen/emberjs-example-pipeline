@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui.custom.js
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require app
+App = Ember.Application.create();
 //= require_tree .
