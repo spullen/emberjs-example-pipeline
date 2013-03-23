@@ -1,0 +1,25 @@
+{{#each stage in controller }}
+  {{#view App.StageColumnView contentBinding="stage"}}
+    <div class="two columns stagecolumn">
+        <div class="stagecolumnheader">
+          <div>
+            {{ stage.title }}
+          </div>
+        </div>
+        <ul class="stagecolumnbody">
+          {{#each item in stage.items }}
+            {{#view App.DraggableView contentBinding="item"}}
+              <li class="staged-item">
+                <div class="cancel">
+                  <a href="#" {{action "removeItemFromStage" item }}>X</a>
+                </div>
+                <div class="title">
+                  {{ item.title }}
+                </div>
+              </li>
+            {{/view}}
+          {{/each}}
+        </ul>
+    </div>
+  {{/view}}
+{{/each}}

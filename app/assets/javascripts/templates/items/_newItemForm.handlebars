@@ -1,0 +1,6 @@
+<form class="itemform">
+  {{view Ember.TextField valueBinding='content.title' name='title' viewName='titleField' placeholder='Enter a title'}}
+  {{view Ember.TextArea valueBinding='content.desc' name='desc' viewName='descField' placeholder='Enter a description'}}
+  <a href="#" {{ action save model }} class="small button">Add Item</button>
+</form>      
+<a href="#" {{ action cancel model }}>Go Back</a>

@@ -1,0 +1,19 @@
+<ul class="one-up mobile">
+{{#each item in controller.unassigned}}
+  {{#view App.DraggableView contentBinding="item"}}
+    <li class="itemli">
+      <div class="itemdeletebutton">
+        <a href="#" {{ action "delete" item }}>X</a>
+      </div>
+
+      <div class="itemtitle">
+        {{ item.title }}
+      </div>
+
+      <div class="itemdesc">
+        {{ item.desc }}
+      </div>
+    </li>
+  {{/view}}
+{{/each}}
+</ul>

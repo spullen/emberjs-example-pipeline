@@ -1,0 +1,13 @@
+<div class="row">
+  <div>
+    DEBUG: 
+    {{#each stage in controllers.stages}}
+      <span>
+        {{ stage.title }} : 
+        {{#each item in stage.items}}
+          {{item.id}}
+        {{/each}}
+      </span>
+    {{/each}}
+  </div>  
+</div>
